@@ -1,0 +1,28 @@
+<div class="title">My Account</div>
+<form>
+  <table class="account-table"><tbody>
+    <tr><td>Privilege</td><td>ADMIN</td></tr>
+    <tr><td>Username</td><td><input type="text" name="uname" value="{{uname}}" readonly="true" /></td></tr>
+    <tr><td>Old Password</td><td><input type="password" name="opass" placeholder="Old Password" /></td></tr>
+    <tr><td>New Password</td><td><input type="password" name="upass" placeholder="New Password" /></td></tr>
+    <tr><td></td><td><input class="save" type="submit" name="submit" value="Save" data-before="Saving..." data-after="Save" /></td></tr>
+  </tbody></table>
+  <input type="hidden" name="method" value="website.userEdit" />
+  <input type="hidden" name="callback" value="account" />
+</form>
+<style type="text/css">
+.account-table{width:100%;}
+.account-table td{
+  border:1px dotted #f9f9f9;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.account-table td:nth-child(1){
+  width:120px;
+  min-width:120px;
+  max-width:120px;
+}
+</style>
+
+

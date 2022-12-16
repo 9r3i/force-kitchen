@@ -1,0 +1,81 @@
+<form>
+<div class="new-post-grid">
+<div class="title">New Data</div>
+<table class="new-post-table"><tbody>
+<tr><td colspan="2"><input type="text" name="title" placeholder="Title" /></td></tr>
+<tr><td colspan="2" id="data-content">
+  
+</td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+<div class="new-post-grid">
+<table class="new-post-table"><tbody>
+<tr><td colspan="2" class="new-post-sel">
+<input class="save" type="submit" name="submit" value="Save" data-before="Saving..." data-after="Save" />
+<input type="hidden" name="method" value="website.dataNew" />
+<input type="hidden" name="callback" value="newDataAfter" />
+<select name="type" id="data-type">
+  <option value="text">text/*</option>
+  <option value="image">image/*</option>
+  <option value="audio">audio/mp3</option>
+  <option value="video">video/mp4</option>
+  <option value="json">JSON (Encode)</option>
+  <option value="url">URL (Query)</option>
+  <option value="ini">INI (Structure)</option>
+  <option value="base64">Base64 (Encode)</option>
+  <option value="gzip">GZip (compression)</option>
+  <option value="binary">Binary (octet-stream)</option>
+</select>
+</td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+</form>
+
+<div class="page-hide">{{Kitchen.newData}}()</div>
+<style type="text/css" media="print,screen">
+.new-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.new-post-table{
+  display:block;
+  width:100%;
+}
+.new-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table td input[type="submit"]{
+  margin-right:5px;
+}
+.new-post-table td.new-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:350px;
+}
+
+@media screen and (max-width:1050px){
+  .new-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

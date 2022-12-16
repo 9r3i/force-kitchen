@@ -1,0 +1,137 @@
+<form>
+<div class="edit-post-grid">
+<div class="title">Edit Post #{{kitchen.data.post.id}}</div>
+<table class="edit-post-table"><tbody>
+<tr><td colspan="2"><input type="text" name="title" value="{{kitchen.data.post.title}}" placeholder="Title" /></td></tr>
+<tr><td colspan="2" id="data-content">
+  <textarea name="content" placeholder="Content">{{kitchen.data.post.content}}</textarea>
+</td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+<div class="edit-post-grid">
+<table class="edit-post-table"><tbody>
+<tr><td colspan="2" class="edit-post-sel">
+<input class="save" type="submit" name="submit" value="Save" data-before="Saving..." data-after="Save" />
+<input type="hidden" name="id" value="{{kitchen.data.post.id}}" />
+<input type="hidden" name="method" value="website.dataEdit" />
+<input type="hidden" name="callback" value="editDataAfter" />
+<select name="type" id="data-type" data-value="{{kitchen.data.post.type}}">
+  <option value="text">text/*</option>
+  <option value="image">image/*</option>
+  <option value="audio">audio/mp3</option>
+  <option value="video">video/mp4</option>
+  <option value="json">JSON (Encode)</option>
+  <option value="url">URL (Query)</option>
+  <option value="ini">INI (Structure)</option>
+  <option value="base64">Base64 (Encode)</option>
+  <option value="gzip">GZip (compression)</option>
+  <option value="binary">Binary (octet-stream)</option>
+</select>
+</td></tr>
+<tr><td>Slug</td><td><input type="text" name="slug" value="{{kitchen.data.post.slug}}" /></td></tr>
+<tr><td>Time</td><td><input type="text" name="time" value="{{kitchen.data.post.time}}" /></td></tr>
+
+<tr><td>Picture</td><td><input type="file" name="picture" data-id="{{kitchen.data.post.id}}" accept="image/*" /></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+</div>
+</form>
+
+<div class="page-hide">{{Kitchen.editData}}()</div>
+<style type="text/css" media="print,screen">
+.edit-post-preview{
+  position:relative;
+}
+.edit-post-preview img{
+  max-width:100%;
+}
+.edit-post-preview div.edit-delete i{
+  margin:5px 10px 5px 0px;
+}
+.edit-post-preview div.edit-delete:after{
+  content:"Delete";
+}
+.edit-post-preview div.edit-delete{
+  position:absolute;
+  top:10px;
+  left:10px;
+  box-shadow:0px 0px 15px 5px #fff;
+  background-color:#c33;
+  border:0px none;
+  padding:5px 15px;
+  margin:0px;
+  width:auto;
+  font-size:16px;
+  color:#fff;
+  transition:all 0.3s ease 0s;
+  outline:none;
+  border-radius:3px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  user-select:none;
+  white-space:pre;
+}
+.edit-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.edit-post-table{
+  display:block;
+  width:100%;
+}
+.edit-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.edit-post-table td:nth-child(1){
+  width:80px;
+  min-width:80px;
+  max-width:80px;
+}
+.edit-post-table tr[data-post="false"],
+.edit-post-table tr[data-article="false"],
+.edit-post-table tr[data-training="false"],
+.edit-post-table tr[data-product="false"],
+.edit-post-table tr[data-event="false"],
+.edit-post-table tr[data-other="false"]{
+  display:none;
+}
+.edit-post-table tr[data-post="true"],
+.edit-post-table tr[data-article="true"],
+.edit-post-table tr[data-training="true"],
+.edit-post-table tr[data-product="true"],
+.edit-post-table tr[data-event="true"],
+.edit-post-table tr[data-other="true"]{
+  display:block;
+}
+.edit-post-table td input[type="submit"]{
+  margin-right:3px;
+}
+.edit-post-table td.edit-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:350px;
+}
+.mce-menubar{
+  display:none;
+}
+
+@media screen and (max-width:1050px){
+  .edit-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

@@ -1,0 +1,91 @@
+<div class="title">All Data (<span id="data-length">...</span>)</div>
+<div class="posts-option">
+<select name="type" id="data-type">
+  <option value="all">All Type (*/*)</option>
+  <option value="text">text/*</option>
+  <option value="image">image/*</option>
+  <option value="audio">audio/mp3</option>
+  <option value="video">video/mp4</option>
+  <option value="json">JSON (Encode)</option>
+  <option value="url">URL (Query)</option>
+  <option value="ini">INI (Structure)</option>
+  <option value="base64">Base64 (Encode)</option>
+  <option value="gzip">GZip (compression)</option>
+  <option value="binary">Binary (octet-stream)</option>
+</select>
+<button class="button button-soft-green" onclick="ForceWebsite.go('{{kkey}}=new')"><i class="fa fa-plus"></i><span>New Data</span></button>
+<div class="posts-option-detail" id="posts-option-detail">
+</div>
+</div>
+<div class="posts-list" id="posts-list">
+</div>
+<div class="page-hide">{{Kitchen.allData}}()</div>
+<style type="text/css">
+.posts-option{
+  padding:0px;
+  margin:0px 0px 20px;
+}
+.posts-option select{
+  margin:0px 5px 5px 0px;
+}
+.posts-option button{
+  vertical-align:top;
+  margin:0px 5px 5px 0px;
+}
+.posts-option-detail{
+  color:#555;
+  margin:0px;
+  padding:0px;
+  font-size:13px;
+}
+.posts-list{
+}
+.post-data-each{
+  display:block;
+  margin:0px 0px 10px;
+  padding:5px;
+  border:1px solid #ccc;
+  background-color:#fff;
+  transition:all 0.3s ease 0s;
+  overflow:hidden;
+}
+.post-data-each:hover{
+  background-color:#f9f9f9;
+}
+.post-data-head i{
+  margin-right:10px;
+}
+.post-data-head{
+  font-weight:bold;
+  font-size:20px;
+  color:#555;
+  padding:0px 5px;
+  margin:0px 0px 5px;
+}
+.post-data-detail{
+  margin:5px;
+  padding:0px;
+  color:#777;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body{
+  margin:10px 5px 5px;
+  padding:0px;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body button{
+  margin-right:10px;
+}
+.posts-option button span{color:#fff;}
+.page-hide{
+  display:none;
+}
+
+@media screen and (max-width:620px){
+  .post-data-head{font-size:16px;}
+}
+</style>
+
+

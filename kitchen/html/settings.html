@@ -1,0 +1,53 @@
+<div class="title">Settings (readonly)</div>
+<form>
+<table class="setting-table"><tbody>
+
+<tr><td colspan="2"><b>Notice:</b> To edit this settings, you must manually open the config file.</td></tr>
+<tr><td colspan="2"><strong>Data</strong></td></tr>
+<tr><td>Driver</td><td><input type="text" value="{{config.data.driver}}" name="driver" readonly="true" /></td></tr>
+<tr><td>Host</td><td><input type="text" value="{{config.data.host}}" name="data.host" readonly="true" /></td></tr>
+<tr><td>Base</td><td><input type="text" value="{{config.data.base}}" name="data.base" readonly="true" /></td></tr>
+
+<tr><td colspan="2"><strong>Site</strong></td></tr>
+<tr><td>Name</td><td><input type="text" value="{{site.name}}" name="name" readonly="true" /></td></tr>
+<tr><td>Description</td><td><input type="text" value="{{site.description}}" name="description" readonly="true" /></td></tr>
+<tr><td>Keywords</td><td><input type="text" value="{{site.keywords}}" name="keywords" readonly="true" /></td></tr>
+<tr><td>Robots</td><td><input type="text" value="{{site.robots}}" name="robots" readonly="true" /></td></tr>
+
+<tr><td colspan="2"><strong>Kitchen</strong></td></tr>
+<tr><td>Namespace</td><td><input type="text" value="{{config.kitchen.namespace}}" name="kitchen.namespace" readonly="true" /></td></tr>
+<tr><td>Host</td><td><input type="text" value="{{config.kitchen.host}}" name="kitchen.host" readonly="true" /></td></tr>
+<tr><td>Key</td><td><input type="text" value="{{config.kitchen.key}}" name="kitchen.key" readonly="true" /></td></tr>
+
+<tr><td colspan="2"><strong>Theme</strong></td></tr>
+<tr><td>Namespace</td><td><input type="text" value="{{theme.namespace}}" name="theme.namespace" readonly="true" /></td></tr>
+<tr><td>Host</td><td><input type="text" value="{{theme.host}}" name="theme.host" readonly="true" /></td></tr>
+
+<tr><td></td><td><input class="save" type="submit" value="Save" name="submit" data-before="Saving..." data-after="Save" /></td></tr>
+
+</tbody></table>
+  <input type="hidden" name="method" value="website.settings" />
+  <input type="hidden" name="callback" value="callback" />
+  
+</form>
+
+<style type="text/css" media="print,screen">
+.setting-table{width:100%;}
+.setting-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.setting-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.setting-table td strong{
+  display:block;
+  text-align:center;
+}
+</style>
+
+

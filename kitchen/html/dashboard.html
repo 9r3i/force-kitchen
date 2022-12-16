@@ -1,0 +1,110 @@
+<div class="title">Dashboard</div>
+<div class="dashboard-line" data-level="2">
+<fieldset class="field"><legend>Welcome</legend>
+Hello, <strong>{{uname}}</strong>. Welcome to <span id="dashboard-type">Kitchen</span>'s dashboard.
+<br />You may <a href="?home" target="_blank" title="View Website">View Website</a> to see what's changed.
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="4">
+<fieldset class="field"><legend>Data</legend>
+<div id="dashboard-data">
+You can see <a href="{{kkey}}=data" title="See all data">All Data</a> page.<br />
+And add new data by clicking this button.<br />
+<button class="button-soft-green" onclick="ForceWebsite.go('{{kkey}}=new')"><i class="fa fa-plus"></i> New Data</button>
+<br />
+Total: {{bulkRaw.length}} rows
+</div>
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="2">
+<fieldset class="field"><legend>Account</legend>
+You also can update your password in <a href="{{kkey}}=account" title="Edit my account">My Account</a> page.
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="16">
+<fieldset class="field"><legend>Access</legend>
+As an admin, you have authorized access to all features in this Kitchen Set.<br />
+Including <a href="{{kkey}}=settings" title="Settings">Settings</a> channel.
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="2">
+<fieldset class="field"><legend>Information</legend>
+{{Kitchen.information}}()
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="8">
+<fieldset class="field"><legend>Engines</legend>
+
+<div>This site is built with several libraries.</div>
+
+<ol class="engine-list">
+
+<li>
+  <strong>Force</strong> version {{Force.version}}, the most fundamental and foundation for the app, as the basic engine.<br />See the repository in <a href="https://github.com/9r3i/force" target="_blank">Github</a> for more update.
+</li>
+
+<li>
+  <strong>ForceData</strong> in <strong>ForceServer</strong> is the back-end database API. Without this, data won't be stored or fetched.<br />See the repository of this library in <a href="https://github.com/9r3i/forceserver" target="_blank">Github</a> for more update.
+</li>
+
+<li>
+  <strong>ForceWebsite</strong> version {{version}}, is the application that running upon the basic engine. This library requires Force as the basic engine.<br />See more about this app in <a href="https://github.com/9r3i/force-website" target="_blank">Github</a>.
+</li>
+
+<li>
+  <strong>Kitchen</strong> version {{Kitchen.version}}, is the admin page for ForceWebsite. <br />See the Force Kitchen repository in <a href="https://github.com/9r3i/force-kitchen" target="_blank">Github</a>, and get the update.
+</li>
+
+<li>
+  Front-end theme <strong>{{theme.namespace}}</strong> version {{Kitchen.frontThemeVersion}}(), is front-end theme for ForceWebsite 2 or greater.<br />
+  See this theme repository in <a href="{{Kitchen.frontThemeURI}}()" target="_blank">[repo:{{theme.namespace}}]</a> for more information.
+</li>
+
+</ol>
+
+
+<div>And here are the supported plugins for ForceWebsite.</div>
+
+<ol>
+  {{Kitchen.pluginList}}()
+</ol>
+
+
+<div>That's all there is to it.</div>
+
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="16">
+<fieldset class="field"><legend>Development</legend>
+This kitchen is using external icon library.<br />
+Check <a href="javascript:Kitchen.fa()" title="Open Window">Font-Awesome</a> icons. Or <a href="{{kitchen.path}}fa.html" target="_blank">direct access</a>.<br />
+<button class="button-red" onclick="Kitchen.clearAllCache()"><i class="fa fa-trash"></i> Clear All Caches</button><br />
+Clear all caches is gonna make you logout automatically.<br />
+The purpose of this button is for development only.
+</fieldset>
+</div>
+
+
+<style type="text/css" media="print,screen">
+.dashboard-line{
+  padding:0px;
+  margin:0px 0px 20px;
+}
+.dashboard-line fieldset{border:1px solid #ccc;}
+.dashboard-line fieldset legend{font-weight:bold;}
+.dashboard-line fieldset a{font-weight:bold;}
+.dashboard-line ol.engine-list li{
+  margin-bottom:10px;
+}
+.dashboard-line button{
+  margin:10px;
+}
+</style>
+
+

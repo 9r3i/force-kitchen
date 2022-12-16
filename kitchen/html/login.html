@@ -1,0 +1,16 @@
+<main class="login-wrapper">
+<div class="login" id="website-login">
+  <div class="login-header" data-text="Login"></div>
+  <form method="POST" action="?kitchen=ajax">
+    <table class="login-table"><tbody>
+      <tr><td>Username</td><td><input type="text" name="uname" class="login-input" /></td></tr>
+      <tr><td>Password</td><td><input type="password" name="upass" class="login-input" /></td></tr>
+      <tr><td></td><td><input class="signin" type="submit" value="Send" name="submit" class="login-submit" data-before="Sending..." data-after="Send" /></td></tr>
+    </tbody></table>
+    <input type="hidden" name="method" value="website.login" />
+    <input type="hidden" name="callback" value="login" />
+  </form>
+  <div class="login-footer" data-text="Copyright &copy; {{site.date.year}}, 9r3i, All Right Reserved." title="9r3i"></div>
+  <div style="clear:both;"></div>
+</div>
+</main>
