@@ -9,3 +9,20 @@
 
 # force-kitchen
 Kitchen Sets for ForceWebsite Kitchen
+
+# Usage
+It's simple, just put this in kitchen section of ForceWebsite configuration file.
+```json
+{
+  "kitchen": {
+    "namespace": "kitchen",
+    "host": "https://9r3i.github.io/force-kitchen",
+    "key": "kitchen"
+  }
+}
+```
+
+# Closing
+That's all there is to it. Alhamdulillaah...
+
+
