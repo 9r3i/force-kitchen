@@ -5,6 +5,7 @@
 [![Stars](https://img.shields.io/github/stars/9r3i/force-kitchen.svg)](https://github.com/9r3i/force-kitchen/stargazers)
 [![Issues](https://img.shields.io/github/issues/9r3i/force-kitchen.svg)](https://github.com/9r3i/force-kitchen/issues)
 [![Release](https://img.shields.io/github/release/9r3i/force-kitchen.svg)](https://github.com/9r3i/force-kitchen/releases)
+[![Donate](https://img.shields.io/badge/donate-paypal-orange.svg)](https://paypal.me/9r3i)
 
 
 # force-kitchen
