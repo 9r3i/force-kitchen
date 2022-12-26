@@ -11,6 +11,24 @@
 # force-kitchen
 Kitchen Sets for ForceWebsite Kitchen
 
+
+# Screenshots Landscape
+[![Dashboard](https://9r3i.github.io/force-kitchen/screenshots/landscape-01.png)](https://9r3i.github.io/force-kitchen/screenshots/landscape-01.png)
+[![All Data List](https://9r3i.github.io/force-kitchen/screenshots/landscape-02.png)](https://9r3i.github.io/force-kitchen/screenshots/landscape-02.png)
+[![Content Editor](https://9r3i.github.io/force-kitchen/screenshots/landscape-03.png)](https://9r3i.github.io/force-kitchen/screenshots/landscape-03.png)
+[![Settings](https://9r3i.github.io/force-kitchen/screenshots/landscape-04.png)](https://9r3i.github.io/force-kitchen/screenshots/landscape-04.png)
+[![Inbox with plugin crispies](https://9r3i.github.io/force-kitchen/screenshots/landscape-05.png)](https://9r3i.github.io/force-kitchen/screenshots/landscape-05.png)
+
+
+# Screenshots Portrait
+[![Dashboard](https://9r3i.github.io/force-kitchen/screenshots/portrait-01.png)](https://9r3i.github.io/force-kitchen/screenshots/portrait-01.png)
+[![Slide Menu Tab](https://9r3i.github.io/force-kitchen/screenshots/portrait-02.png)](https://9r3i.github.io/force-kitchen/screenshots/portrait-02.png)
+[![All Data List](https://9r3i.github.io/force-kitchen/screenshots/portrait-03.png)](https://9r3i.github.io/force-kitchen/screenshots/portrait-03.png)
+[![Content Editor](https://9r3i.github.io/force-kitchen/screenshots/portrait-04.png)](https://9r3i.github.io/force-kitchen/screenshots/portrait-04.png)
+[![Settings](https://9r3i.github.io/force-kitchen/screenshots/portrait-05.png)](https://9r3i.github.io/force-kitchen/screenshots/portrait-05.png)
+
+
+
 # Usage
 It's simple, just put this in kitchen section of ForceWebsite configuration file.
 ```json
@@ -22,6 +40,7 @@ It's simple, just put this in kitchen section of ForceWebsite configuration file
   }
 }
 ```
+
 
 # Closing
 That's all there is to it. Alhamdulillaah...
