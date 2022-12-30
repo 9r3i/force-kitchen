@@ -31,7 +31,7 @@ window.kitchen=window.kitchen||{
  *   ForceWebsite - https://github.com/9r3i/force-website
  */
 window.Kitchen=window.Kitchen||{
-  version:'1.0.0',
+  version:'1.1.0',
   MENU_WIDTH:620,
   text:{
     login:'login',
@@ -268,7 +268,7 @@ window.Kitchen=window.Kitchen||{
     }
     return res;
   },
-  dataTypeChange:function(dcon,oval,type,id){
+  dataTypeChange:async function(dcon,oval,type,id){
     var readable=['json','url','ini'],
     textarea=ForceWebsite.buildElement('textarea',null,{
       'name':'content',
@@ -304,7 +304,8 @@ window.Kitchen=window.Kitchen||{
       var upload=Kitchen.uploadFile(type,textarea);
       upload.main.appendTo(dcon);
       if(id){
-        upload.url=ForceWebsite.contentURL(id,true);
+        
+        upload.url=await ForceWebsite.contentURL(id,true);
         upload.review();
       }
     }
@@ -334,7 +335,7 @@ window.Kitchen=window.Kitchen||{
       );
     };
   },
-  editDataPicture:function(){
+  editDataPicture:async function(){
     var pic=document.querySelector('input[name="picture"]');
     if(!pic){return;}
     var ndel=ForceWebsite.buildElement('div',null,{
@@ -348,7 +349,7 @@ window.Kitchen=window.Kitchen||{
     nview=ForceWebsite.buildElement('div',null,{
       'class':'edit-post-preview',
     }),
-    src=ForceWebsite.imageURL(pic.dataset.id),
+    src=await ForceWebsite.imageURL(pic.dataset.id),
     img=new Image;
     pic.parentNode.insertBefore(nview,pic);
     img.src=src;
@@ -689,8 +690,8 @@ window.Kitchen=window.Kitchen||{
       'id':'data-'+p.id,
       'data-type':p.type,
     },[ph,pd,pb]);
-    raw.onclick=function(e){
-      var url=ForceWebsite.contentURL(this.dataset.id);
+    raw.onclick=async function(e){
+      var url=await ForceWebsite.contentURL(this.dataset.id);
       return window.open(url,'_blank');
     };
     view.onclick=function(e){
@@ -1016,6 +1017,29 @@ window.Kitchen=window.Kitchen||{
       +'<img src="'+image+'" /> Loading...'
       +'</div>';
     return contentMain;
+  },
+  dataDriver:function(){
+    const drivers={
+      ForceData:'<strong>ForceData</strong> in '
+        +'<strong>ForceServer</strong> is the back-end '
+        +'database API. Without this, data won\'t be stored '
+        +'or fetched.<br />See the repository of this library '
+        +'in <a href="https://github.com/9r3i/forceserver" '
+        +'target="_blank">Github</a> for more update.',
+      Firebase:'<strong>Firebase</strong> version '
+        +ForceWebsite.fb.MFirebase.version
+        +', cloud data storage. Without this, data won\'t be'
+        +' stored or fetched.<br />See the repository of this '
+        +'module in '
+        +'<a href="https://github.com/9r3i/firebase-moduler" '
+        +'target="_blank">Github</a> for more update.',
+    },
+    dkey=ForceWebsite.config.data.driver,
+    dnol='Unknown data driver.';
+    return drivers.hasOwnProperty(dkey)?drivers[dkey]:dnol;
+  },
+  fwName:function(){
+    return ForceWebsite.constructor.name;
   },
   frontThemeVersion:function(){
     var ns=ForceWebsite.theme.namespace;
