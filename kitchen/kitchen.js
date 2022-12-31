@@ -31,7 +31,7 @@ window.kitchen=window.kitchen||{
  *   ForceWebsite - https://github.com/9r3i/force-website
  */
 window.Kitchen=window.Kitchen||{
-  version:'1.1.0',
+  version:'1.1.1',
   MENU_WIDTH:620,
   text:{
     login:'login',
@@ -1019,7 +1019,8 @@ window.Kitchen=window.Kitchen||{
     return contentMain;
   },
   dataDriver:function(){
-    const drivers={
+    const dkey=ForceWebsite.config.data.driver,
+    drivers={
       ForceData:'<strong>ForceData</strong> in '
         +'<strong>ForceServer</strong> is the back-end '
         +'database API. Without this, data won\'t be stored '
@@ -1027,14 +1028,14 @@ window.Kitchen=window.Kitchen||{
         +'in <a href="https://github.com/9r3i/forceserver" '
         +'target="_blank">Github</a> for more update.',
       Firebase:'<strong>Firebase</strong> version '
-        +ForceWebsite.fb.MFirebase.version
+        +(dkey=='Firebase'
+          ?ForceWebsite.fb.MFirebase.version:'0.0.0')
         +', cloud data storage. Without this, data won\'t be'
         +' stored or fetched.<br />See the repository of this '
         +'module in '
         +'<a href="https://github.com/9r3i/firebase-moduler" '
         +'target="_blank">Github</a> for more update.',
     },
-    dkey=ForceWebsite.config.data.driver,
     dnol='Unknown data driver.';
     return drivers.hasOwnProperty(dkey)?drivers[dkey]:dnol;
   },
