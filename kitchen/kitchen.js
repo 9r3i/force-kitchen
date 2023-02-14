@@ -1062,6 +1062,16 @@ window.Kitchen=window.Kitchen||{
       return window[ns].uri;
     }return '[not-available]';
   },
+  frontThemeProperty:function(key,type='string'){
+    var ns=ForceWebsite.theme.namespace;
+    if(window.hasOwnProperty(ns)
+      &&typeof window[ns]==='object'
+      &&window[ns]!==null
+      &&window[ns].hasOwnProperty(key)
+      &&typeof window[ns][key]===type){
+      return window[ns][key];
+    }return '[not-available]';
+  },
   pluginList:function(){
     var res=[],
     plugs=ForceWebsite.plug.plug;
