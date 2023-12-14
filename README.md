@@ -45,9 +45,5 @@ It's simple, just put this in kitchen section of ForceWebsite configuration file
 # Closing
 That's all there is to it. Alhamdulillaah...
 
-### Visitors
-[![9r3i/force-kitchen Visitors](https://9r3i.web.id/api/views/?user=9r3i-force-kitchen&color=51,119,187)](https://github.com/9r3i/force-kitchen)
-|---|
-| Since January 18th 2023 |
 
 
